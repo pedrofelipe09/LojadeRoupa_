@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace LojadeRoupa._03_Entidades
 {
-    public class Estoque
+    internal class Carrinho
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-
     }
 }
