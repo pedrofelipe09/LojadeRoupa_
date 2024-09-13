@@ -15,7 +15,7 @@ namespace LojadeRoupa._03_Entidades
         public double Tamanho { get; set; }
         public string Cor { get; set; }
         public string Categoria { get; set; }
-
-       
+        public int QuantidadeDisponivel { get; set; }
+        public int EstoqueId { get; set; }
     }
 }
