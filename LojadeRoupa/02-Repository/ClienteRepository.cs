@@ -12,7 +12,7 @@ namespace LojadeRoupa._02_Repository
     public class ClienteRepository
     {
         public readonly string _connectionString;
-        public ClienteRepository(string connection)
+        public ClienteRepository(string connection)     
         {
             _connectionString = connection;
         }
