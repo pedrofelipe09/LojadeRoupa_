@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace LojadeRoupa._03_Entidades
 {
-    public class Pagamento
+    public class Compra
     {
         public int Id { get; set; } 
+        public DateTime DataCompra { get; set; }
+        public string ItensComprados { get; set; }
+        public int Client { get; set; }
+        public int Total { get; set; }
         
+
     }
 }
