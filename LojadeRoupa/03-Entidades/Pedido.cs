@@ -9,9 +9,9 @@ namespace LojadeRoupa._03_Entidades
     public class Pedido
     {
         public int Id { get; set; }
-        public string Cliente { get; set; }
+        public int ClienteId { get; set; }
         public DateTime Data { get; set; }
-        public string Total { get; set; }
+        public double Total { get; set; }
 
     }
 }
