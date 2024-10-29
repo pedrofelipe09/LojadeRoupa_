@@ -51,6 +51,14 @@ namespace LojadeRoupa._02_Repository.Data
                                            Total TEXT
                                         
                                            );";
+            criarTabela = @"CREATE TABLE IF NOT EXISTS Compras(
+                                           Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                           DataCompra DATETIME NOT NULL,
+                                           ItensComprados TEXT,
+                                           Client INTEGER,
+                                           Total TEXT
+                                        
+                                           );";
 
             connection.Execute(criarTabela);
 

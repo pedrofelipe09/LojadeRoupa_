@@ -1,4 +1,6 @@
-﻿using LojadeRoupa._02_Repository;
+﻿using LojadeRoupa._01_Service.Interface;
+using LojadeRoupa._02_Repository;
+using LojadeRoupa._02_Repository.Interface;
 using LojadeRoupa._03_Entidades;
 using System;
 using System.Collections.Generic;
@@ -8,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace LojadeRoupa._01_Service
 {
-    public class CategoriaService
+    public class CategoriaService : ICategoriaService
     {
-        public CategoriaRepository _repository { get; set; }
+        public ICategoriaRepository _repository { get; set; }
 
         public CategoriaService(string connection)
         {

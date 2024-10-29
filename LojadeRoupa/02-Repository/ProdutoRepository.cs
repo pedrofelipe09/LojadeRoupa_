@@ -1,4 +1,5 @@
 ﻿using Dapper.Contrib.Extensions;
+using LojadeRoupa._02_Repository.Interface;
 using LojadeRoupa._03_Entidades;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace LojadeRoupa._02_Repository
 {
-    public class ProdutoRepository
+    public class ProdutoRepository : IProdutoRepository
+    
     {
         public readonly string _connectionString;
         public ProdutoRepository(string connection)
