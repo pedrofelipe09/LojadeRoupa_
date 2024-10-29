@@ -14,7 +14,7 @@ namespace LojadeRoupa._01_Service
     {
         public ICategoriaRepository _repository { get; set; }
 
-        public CategoriaService(string connection)
+        public CategoriaService(string connection)  
         {
             _repository = new CategoriaRepository(connection);
         }
