@@ -35,7 +35,7 @@ namespace LojadeRoupa._02_Repository
             using var connection = new SQLiteConnection(_connectionString);
             return connection.Get<Pedido>(id);
         }
-        public void Editar(Pedido pedido)
+        public void Editar(Pedido pedido)   
         {
             using var connection = new SQLiteConnection(_connectionString);
             connection.Update<Pedido>(pedido);

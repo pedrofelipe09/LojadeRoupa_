@@ -37,21 +37,21 @@ namespace LojadeRoupa._02_Repository.Data
                                            QuantidadeDisponivel INTEGER
                                          
                                            );";
-            criarTabela = @"CREATE TABLE IF NOT EXISTS Clientes(
+            criarTabela += @"CREATE TABLE IF NOT EXISTS Clientes(
                                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                            Nome TEXT NOT NULL,
                                            Email TEXT NOT NULL,
                                            Endereco TEXT NOT NULL,
                                            Telefone INTEGER
                                            );";
-            criarTabela = @"CREATE TABLE IF NOT EXISTS Pedidos(
+            criarTabela += @"CREATE TABLE IF NOT EXISTS Pedidos(
                                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                            Cliente TEXT NOT NULL,
                                            Data DATETIME NOT NULL,
                                            Total TEXT
                                         
                                            );";
-            criarTabela = @"CREATE TABLE IF NOT EXISTS Compras(
+            criarTabela += @"CREATE TABLE IF NOT EXISTS Compras(
                                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                            DataCompra DATETIME NOT NULL,
                                            ItensComprados TEXT,
