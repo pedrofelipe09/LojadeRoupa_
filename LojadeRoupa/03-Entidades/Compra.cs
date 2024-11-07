@@ -9,11 +9,11 @@ namespace LojadeRoupa._03_Entidades
     public class Compra
     {
         public int Id { get; set; } 
+        public int ClienteId { get; set; }
+        public int ProdutoId { get; set; }
         public DateTime DataCompra { get; set; }
-        public string ItensComprados { get; set; }
-        public int Client { get; set; }
-        public int Total { get; set; }
-        
+
+
 
     }
 }

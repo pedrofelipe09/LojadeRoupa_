@@ -14,27 +14,18 @@ namespace LojadeRoupa._02_Repository.Data
 
         public static void Inicializar()
         {
-            using var connection = new SQLiteConnection("Data Source=LojaCrud.db");
+            using var connection = new SQLiteConnection(ConnectionString);
             string criarTabela = @"CREATE TABLE IF NOT EXISTS Produtos(
                                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                            Nome TEXT NOT NULL,
                                            Preco REAL NOT NULL,
-                                           Descricao TEXT,
-                                           Tamanho REAL,
-                                           Cor TEXT,
-                                           Categoria TEXT
-                                           );";
+                                           Descricao TEXT NOT NULL
 
-            criarTabela += @"CREATE TABLE IF NOT EXISTS Categorias(
-                                           Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                           Nome TEXT NOT NULL,
-                                           Descricao TEXT
-                                         
                                            );";
             criarTabela += @"CREATE TABLE IF NOT EXISTS Estoques(
                                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                           Produto TEXT NOT NULL,
-                                           QuantidadeDisponivel INTEGER
+                                           ProdutoId INTEGER NOT NULL,
+                                           QuantidadeDisponivel INTEGER NOT NULL
                                          
                                            );";
             criarTabela += @"CREATE TABLE IF NOT EXISTS Clientes(
@@ -42,23 +33,16 @@ namespace LojadeRoupa._02_Repository.Data
                                            Nome TEXT NOT NULL,
                                            Email TEXT NOT NULL,
                                            Endereco TEXT NOT NULL,
-                                           Telefone INTEGER
+                                           Telefone TEXT NOT NULL
                                            );";
-            criarTabela += @"CREATE TABLE IF NOT EXISTS Pedidos(
-                                           Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                           Cliente TEXT NOT NULL,
-                                           Data DATETIME NOT NULL,
-                                           Total TEXT
-                                        
-                                           );";
+            
             criarTabela += @"CREATE TABLE IF NOT EXISTS Compras(
                                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                           DataCompra DATETIME NOT NULL,
-                                           ItensComprados TEXT,
-                                           Client INTEGER,
-                                           Total TEXT
-                                        
-                                           );";
+                                           ProdutoId INTEGER NOT NULL,
+                                           ClienteId INTEGER NOT NULL,
+                                           DataCompra DATETIME NOT NULL
+
+                                            );";
 
             connection.Execute(criarTabela);
 

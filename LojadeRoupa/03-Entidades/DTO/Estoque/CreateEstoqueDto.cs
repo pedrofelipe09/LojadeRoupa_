@@ -2,7 +2,7 @@
 {
     public class CreateEstoqueDto
     {
-        public string Produto { get; set; }
+        public int ProdutoId { get; set; }
         public int QuantidadeDisponivel { get; set; }
     }
 }

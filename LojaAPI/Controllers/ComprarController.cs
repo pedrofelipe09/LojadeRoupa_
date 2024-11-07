@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using LojaAPI.Controllers.DTO.Compra;
-using LojaAPI.Controllers.DTO.Pedido;
 using LojadeRoupa._01_Service;
 using LojadeRoupa._02_Repository;
 using LojadeRoupa._03_Entidades;
