@@ -22,6 +22,10 @@ namespace LojaAPI.Controllers
             service = new ClienteService(configuration);
             _mapper = mapper;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cliente"></param>
 
         [HttpPost("Adicionar-Cliente")]
         public void AdicionarCliente(CreateClienteDto cliente)
