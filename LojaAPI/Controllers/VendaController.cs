@@ -1,43 +1,40 @@
 ﻿using AutoMapper;
+using LojaAPI.Controllers.DTO.Compra;
 using LojaAPI.Controllers.DTO.Produto;
 using LojadeRoupa._01_Service;
-using LojadeRoupa._02_Repository;
-using LojadeRoupa._02_Repository.Interface;
 using LojadeRoupa._03_Entidades;
+using LojadeRoupa._03_Entidades.DTO.Venda;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LojaAPI.Controllers
 {
-
     [ApiController]
     [Route("[controller]")]
-
-    public class ProdutoController : ControllerBase
+    public class VendaController:ControllerBase
     {
-        private readonly IProdutoRepository service;
+        private readonly VendaService service;
         private readonly IMapper _mapper;
 
-        public ProdutoController(IConfiguration config, IMapper mapper)
+        public VendaController(IConfiguration config, IMapper mapper)
         {
             string configuration = config.GetConnectionString("DefaultConnection");
-            service = new ProdutoRepository(configuration);
+            service = new VendaService(configuration);
             _mapper = mapper;
         }
-
         /// <summary>
-        /// Adicione um Produto
+        /// Adicione uma Venda
         /// </summary>
-        /// <param name="produto"></param>
+        /// <param name="venda"></param>
         /// <returns></returns>
-        [HttpPost("Adicionar-produto")]
-        public IActionResult AdicionarProduto(CreateProdutoDto produto)
+        [HttpPost("Adicionar-Venda")]
+        public IActionResult AdicionarVenda(CreateVendaDto venda)
 
         {
             try
             {
-                Produto produto1 = _mapper.Map<Produto>(produto);
-                service.AdicionarProduto(produto1);
-                return Ok();
+                Venda venda1 = _mapper.Map<Venda>(venda);
+                service.AdicionarVenda(venda1);
+                return Ok(venda1);
             }
             catch (Exception erro)
             {
@@ -46,48 +43,48 @@ namespace LojaAPI.Controllers
                     $"o erro foi \n{erro.Message}");
             }
 
-         }
+        }
         /// <summary>
-        /// Lista de Produtos
+        /// Lista de Vendas
         /// </summary>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        [HttpGet("Listar-Produtos")]
-        public List<Produto> ListarProdutos()
+        [HttpGet("Listar-Venda")]
+        public List<Venda> ListarVenda()
         {
             try
             {
-                return service.ListarProdutos();
+                return service.ListarVenda();
             }
             catch (Exception)
             {
 
-                throw new Exception("Erro ao listar os Produtos");
+                throw new Exception("Erro ao listar as Vendas");
             }
-        }
-        /// <summary>
-        /// Modifique Dados dos Produtos
-        /// </summary>
-        /// <param name="produto"></param>
-        /// <returns></returns>
-        [HttpPut("Editar-Produtos")]
-        public IActionResult EditarProdutos(Produto produto)
-        {
-            service.Editar(produto);
-            return NoContent();
-        }
-        /// <summary>
-        /// Exclua um PRODUTO do seu Banco de Dados
-        /// </summary>
-        /// <param name="produto"></param>
-        /// <returns></returns>
-        [HttpDelete("Deletar-Produtos")]
-        public IActionResult DeletarProduto(int produto)
-        {
-            service.Delete(produto);
-            return NoContent();
-        }
 
+        }
+        /// <summary>
+        /// Modifique os dados da Venda
+        /// </summary>
+        /// <param name="venda"></param>
+        /// <returns></returns>
+        [HttpPut("Editar-Venda")]
+        public IActionResult EditarVenda(Venda venda)
+        {
+            service.EditarVenda(venda);
+            return NoContent();
+        }
+        /// <summary>
+        /// Delete uma Venda
+        /// </summary>
+        /// <param name="produto"></param>
+        /// <returns></returns>
+        [HttpDelete("Deletar-Venda")]
+        public IActionResult DeleteVenda(int venda)
+        {
+            service.DeleteVenda(venda);
+            return NoContent();
+        }
 
 
     }

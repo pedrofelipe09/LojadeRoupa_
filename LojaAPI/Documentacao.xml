@@ -122,6 +122,34 @@
             <param name="produto"></param>
             <returns></returns>
         </member>
+        <member name="M:LojaAPI.Controllers.VendaController.AdicionarVenda(LojadeRoupa._03_Entidades.DTO.Venda.CreateVendaDto)">
+            <summary>
+            Adicione uma Venda
+            </summary>
+            <param name="venda"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.VendaController.ListarVenda">
+            <summary>
+            Lista de Vendas
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:LojaAPI.Controllers.VendaController.EditarVenda(LojadeRoupa._03_Entidades.Venda)">
+            <summary>
+            Modifique os dados da Venda
+            </summary>
+            <param name="venda"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.VendaController.DeleteVenda(System.Int32)">
+            <summary>
+            Delete uma Venda
+            </summary>
+            <param name="produto"></param>
+            <returns></returns>
+        </member>
         <member name="M:EstoqueController.AdicionarEstoque(LojaAPI.Controllers.DTO.Estoque.CreateEstoqueDto)">
             <summary>
             Adicione um Produto ao Estoque

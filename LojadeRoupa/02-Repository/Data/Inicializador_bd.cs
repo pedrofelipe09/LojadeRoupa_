@@ -40,7 +40,9 @@ namespace LojadeRoupa._02_Repository.Data
                                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                            ProdutoId INTEGER NOT NULL,
                                            ClienteId INTEGER NOT NULL,
-                                           DataCompra DATETIME NOT NULL
+                                           EnderecoId INTEGER NOT NULL,
+                                           DataCompra DATETIME NOT NULL,
+                                           Total INTEGER NOT NULL
 
                                             );";
             criarTabela += @"CREATE TABLE IF NOT EXISTS Enderecos(
