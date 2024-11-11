@@ -32,7 +32,7 @@ namespace LojadeRoupa._02_Repository.Data
                                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                            Nome TEXT NOT NULL,
                                            Email TEXT NOT NULL,
-                                           Endereco TEXT NOT NULL,
+                                           EnderecoId INTEGER NOT NULL,
                                            Telefone TEXT NOT NULL
                                            );";
             
@@ -54,6 +54,16 @@ namespace LojadeRoupa._02_Repository.Data
                                            Numero INTEGER NOT NULL
 
                                             );";
+            criarTabela += @"CREATE TABLE IF NOT EXISTS Vendas(
+                                           Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                           ClienteId INTEGER NOT NULL,
+                                           CompraId INTEGER NOT NULL,
+                                           EnderecoId INTEGER NOT NULL,
+                                           Total INTEGER NOT NULL
+                                           
+
+                                            );";
+
 
 
 
