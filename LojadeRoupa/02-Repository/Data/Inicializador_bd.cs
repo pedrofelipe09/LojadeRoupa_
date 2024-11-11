@@ -43,6 +43,17 @@ namespace LojadeRoupa._02_Repository.Data
                                            DataCompra DATETIME NOT NULL
 
                                             );";
+            criarTabela += @"CREATE TABLE IF NOT EXISTS Enderecos(
+                                           Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                           Estado TEXT NOT NULL,
+                                           Cidade TEXT NOT NULL,
+                                           Bairro TEXT NOT NULL,
+                                           Rua TEXT NOT NULL,
+                                           Numero INTEGER NOT NULL
+
+                                            );";
+
+
 
             connection.Execute(criarTabela);
 

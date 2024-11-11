@@ -29,7 +29,7 @@ namespace LojaAPI.Controllers
         /// </summary>
         /// <param name="produto"></param>
         /// <returns></returns>
-        [HttpPost("Adicionar-dapper")]
+        [HttpPost("Adicionar-produto")]
         public IActionResult AdicionarProduto(CreateProdutoDto produto)
 
         {

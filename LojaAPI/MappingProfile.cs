@@ -6,6 +6,8 @@ using LojaAPI.Controllers.DTO.Estoque;
 
 using LojaAPI.Controllers.DTO.Produto;
 using LojadeRoupa._03_Entidades;
+using LojadeRoupa._03_Entidades.DTO.Endereco;
+using LojadeRoupa._03_Entidades.DTO.Produto;
 
 namespace LojaAPI
 {
@@ -19,6 +21,7 @@ namespace LojaAPI
             CreateMap<CreateClienteDto, Cliente>().ReverseMap();
             
             CreateMap<CreateCompraDTO, Compra>().ReverseMap();
+            CreateMap<CreateEnderecoDto, Endereco>().ReverseMap();
 
 
         }

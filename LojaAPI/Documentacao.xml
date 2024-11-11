@@ -66,6 +66,34 @@
             <param name="compra"></param>
             <returns></returns>
         </member>
+        <member name="M:LojaAPI.Controllers.EnderecoController.AdicionarEndereco(LojadeRoupa._03_Entidades.DTO.Endereco.CreateEnderecoDto)">
+            <summary>
+            Adicione um Endereco
+            </summary>
+            <param name="endereco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.EnderecoController.ListarEndereco">
+            <summary>
+            Lista dos Endereços
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:LojaAPI.Controllers.EnderecoController.EditarEndereco(LojadeRoupa._03_Entidades.DTO.Produto.Endereco)">
+            <summary>
+            Modifique o Endereço
+            </summary>
+            <param name="endereco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.EnderecoController.DeletarEndereco(System.Int32)">
+            <summary>
+             Exclua um Endereço
+            </summary>
+            <param name="endereco"></param>
+            <returns></returns>
+        </member>
         <member name="M:LojaAPI.Controllers.ProdutoController.AdicionarProduto(LojaAPI.Controllers.DTO.Produto.CreateProdutoDto)">
             <summary>
             Adicione um Produto
