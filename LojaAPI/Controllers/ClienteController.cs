@@ -15,7 +15,11 @@ namespace LojaAPI.Controllers
     {
         private readonly IClienteService service;
         private readonly IMapper _mapper;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="config"></param>
+        /// <param name="mapper"></param>
         public ClienteController(IConfiguration config, IMapper mapper)
         {
             string configuration = config.GetConnectionString("DefaultConnection");
@@ -23,33 +27,68 @@ namespace LojaAPI.Controllers
             _mapper = mapper;
         }
         /// <summary>
-        /// 
+        /// Adicione um cliente
         /// </summary>
         /// <param name="cliente"></param>
 
         [HttpPost("Adicionar-Cliente")]
-        public void AdicionarCliente(CreateClienteDto cliente)
+        public IActionResult AdicionarCliente(CreateClienteDto cliente)
 
         {
-            Cliente cliente1 = _mapper.Map<Cliente>(cliente);
-            service.AdicionarCliente(cliente1);
+            try
+            {
+                Cliente cliente1 = _mapper.Map<Cliente>(cliente);
+                service.AdicionarCliente(cliente1);
+                return Ok(cliente1);
+            }
+            catch (Exception exception)
+            {
+                BadRequest($"Ocorreu um erro ao adicionar o aluno, " +
+                    $"o erro foi \n {exception.Message}");
+                throw;
+            }
+           
         }
+        /// <summary>
+        /// Lista de Clientes
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         [HttpGet("Listar-Cliente")]
         public List<Cliente> ListarCliente()
         {
-            return service.ListarCliente();
-        }
+            try
+            {
+                return service.ListarCliente();
+            }
+            catch (Exception)
+            {
 
+                throw new Exception("Erro ao Listar o Cliente");
+            }
+            
+        }
+        /// <summary>
+        /// Modifique Dados dos Clientes
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
         [HttpPut("Editar-Cliente")]
-        public void EditarCliente(Cliente cliente)
+        public IActionResult EditarCliente(Cliente cliente)
         {
             service.EditarCliente(cliente);
+            return NoContent();
         }
-
+        /// <summary>
+        /// Exclua um CLIENTE do seu Banco de Dados
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
         [HttpDelete("Deletar-Cliente")]
-        public void DeletarCliente(int cliente)
+        public IActionResult DeletarCliente(int cliente)
         {
             service.Delete(cliente);
+            return NoContent();
         }
     }
 }

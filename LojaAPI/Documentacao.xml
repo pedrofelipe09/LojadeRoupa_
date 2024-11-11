@@ -4,5 +4,123 @@
         <name>LojaAPI</name>
     </assembly>
     <members>
+        <member name="M:LojaAPI.Controllers.ClienteController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:LojaAPI.Controllers.ClienteController.AdicionarCliente(LojaAPI.Controllers.DTO.Cliente.CreateClienteDto)">
+            <summary>
+            Adicione um cliente
+            </summary>
+            <param name="cliente"></param>
+        </member>
+        <member name="M:LojaAPI.Controllers.ClienteController.ListarCliente">
+            <summary>
+            Lista de Clientes
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:LojaAPI.Controllers.ClienteController.EditarCliente(LojadeRoupa._03_Entidades.Cliente)">
+            <summary>
+            Modifique Dados dos Clientes
+            </summary>
+            <param name="cliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.ClienteController.DeletarCliente(System.Int32)">
+            <summary>
+            Exclua um CLIENTE do seu Banco de Dados
+            </summary>
+            <param name="cliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.ComprarController.AdicionarCompra(LojaAPI.Controllers.DTO.Compra.CreateCompraDTO)">
+            <summary>
+            Adicione uma Compra
+            </summary>
+            <param name="compra"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.ComprarController.ListarCompra">
+            <summary>
+            Lista das Compras
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:LojaAPI.Controllers.ComprarController.EditarCompra(LojadeRoupa._03_Entidades.Compra)">
+            <summary>
+            Modifique Dados das Compras
+            </summary>
+            <param name="compra"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.ComprarController.DeletarCompra(System.Int32)">
+            <summary>
+            Exclua uma COMPRA do seu Banco de Dados
+            </summary>
+            <param name="compra"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.ProdutoController.AdicionarProduto(LojaAPI.Controllers.DTO.Produto.CreateProdutoDto)">
+            <summary>
+            Adicione um Produto
+            </summary>
+            <param name="produto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.ProdutoController.ListarProdutos">
+            <summary>
+            Lista de Produtos
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:LojaAPI.Controllers.ProdutoController.EditarProdutos(LojadeRoupa._03_Entidades.Produto)">
+            <summary>
+            Modifique Dados dos Produtos
+            </summary>
+            <param name="produto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LojaAPI.Controllers.ProdutoController.DeletarProduto(System.Int32)">
+            <summary>
+            Exclua um PRODUTO do seu Banco de Dados
+            </summary>
+            <param name="produto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EstoqueController.AdicionarEstoque(LojaAPI.Controllers.DTO.Estoque.CreateEstoqueDto)">
+            <summary>
+            Adicione um Produto ao Estoque
+            </summary>
+            <param name="estoque"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EstoqueController.ListarEstoque">
+            <summary>
+            Lista do Estoque
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:EstoqueController.EditarEstoque(LojadeRoupa._03_Entidades.Estoque)">
+            <summary>
+            Modifique Dados do Estoque
+            </summary>
+            <param name="estoque"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EstoqueController.DeletarEstoque(System.Int32)">
+            <summary>
+            Exclua um Produto do Estoque do seu Banco de Dados
+            </summary>
+            <param name="estoque"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -28,30 +28,67 @@ public class EstoqueController : ControllerBase
         service = new EstoqueRepository(configuration);
         _mapper = mapper;
     }
-
+    /// <summary>
+    /// Adicione um Produto ao Estoque
+    /// </summary>
+    /// <param name="estoque"></param>
+    /// <returns></returns>
     [HttpPost("Adicionar-Estoque")]
-    public void AdicionarEstoque(CreateEstoqueDto estoque)
+    public IActionResult AdicionarEstoque(CreateEstoqueDto estoque)
 
     {
-       Estoque estoque1 = _mapper.Map<Estoque>(estoque);
-        service.AdicionarEstoque(estoque1);
+        try
+        {
+            Estoque estoque1 = _mapper.Map<Estoque>(estoque);
+            service.AdicionarEstoque(estoque1);
+            return Ok(estoque1);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+      
     }
+    /// <summary>
+    /// Lista do Estoque
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     [HttpGet("Listar-Estoque")]
     public List<Estoque> ListarEstoque()
     {
-        return service.ListarEstoque();
-    }
+        try
+        {
+            return service.ListarEstoque();
+        }
+        catch (Exception)
+        {
 
+            throw new Exception("Erro ao listar o Estoque");
+        }
+    }
+    /// <summary>
+    /// Modifique Dados do Estoque
+    /// </summary>
+    /// <param name="estoque"></param>
+    /// <returns></returns>
     [HttpPut("Editar-Estoque")]
-    public void EditarEstoque(Estoque estoque)
+    public IActionResult EditarEstoque(Estoque estoque)
     {
         service.EditarEstoque(estoque);
+        return NoContent();
     }
-
+    /// <summary>
+    /// Exclua um Produto do Estoque do seu Banco de Dados
+    /// </summary>
+    /// <param name="estoque"></param>
+    /// <returns></returns>
     [HttpDelete("Deletar-Estoque")]
-    public void DeletarEstoque(int estoque)
+    public IActionResult DeletarEstoque(int estoque)
     {
         service.Delete(estoque);
+        return NoContent();
     }
 
 }

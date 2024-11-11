@@ -24,30 +24,67 @@ namespace LojaAPI.Controllers
             _mapper = mapper;
         }
 
-
+        /// <summary>
+        /// Adicione um Produto
+        /// </summary>
+        /// <param name="produto"></param>
+        /// <returns></returns>
         [HttpPost("Adicionar-dapper")]
-        public void AdicionarProduto(CreateProdutoDto produto)
+        public IActionResult AdicionarProduto(CreateProdutoDto produto)
 
         {
-            Produto produto1 = _mapper.Map<Produto>(produto);
-            service.AdicionarProduto(produto1);
-        }
+            try
+            {
+                Produto produto1 = _mapper.Map<Produto>(produto);
+                service.AdicionarProduto(produto1);
+                return Ok();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+         }
+        /// <summary>
+        /// Lista de Produtos
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         [HttpGet("Listar-Produtos")]
         public List<Produto> ListarProdutos()
         {
-            return service.ListarProdutos();
-        }
+            try
+            {
+                return service.ListarProdutos();
+            }
+            catch (Exception)
+            {
 
+                throw new Exception("Erro ao listar os Produtos");
+            }
+        }
+        /// <summary>
+        /// Modifique Dados dos Produtos
+        /// </summary>
+        /// <param name="produto"></param>
+        /// <returns></returns>
         [HttpPut("Editar-Produtos")]
-        public void EditarProdutos(Produto produto)
+        public IActionResult EditarProdutos(Produto produto)
         {
             service.Editar(produto);
+            return NoContent();
         }
-
+        /// <summary>
+        /// Exclua um PRODUTO do seu Banco de Dados
+        /// </summary>
+        /// <param name="produto"></param>
+        /// <returns></returns>
         [HttpDelete("Deletar-Produtos")]
-        public void DeletarProduto(int produto)
+        public IActionResult DeletarProduto(int produto)
         {
             service.Delete(produto);
+            return NoContent();
         }
 
 
